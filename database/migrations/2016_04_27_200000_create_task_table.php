@@ -6,8 +6,8 @@
  * Time: 9:26 PM
  */
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 
 class CreateTaskTable extends Migration
@@ -20,15 +20,15 @@ class CreateTaskTable extends Migration
     public function up()
     {
         Schema::create('task', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();
 
-            $table->string('email')->index();
+            $table->string('email')->index()->unique();
             $table->string('token')->index();
 
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('user');
 
             $table->timestamp('created_at');
         });
