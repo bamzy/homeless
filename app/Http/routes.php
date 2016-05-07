@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home.blade');
-});
+Route::get('/', 'PageController@index');
 
 
 

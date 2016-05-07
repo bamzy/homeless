@@ -7,9 +7,11 @@
  */
 
 namespace database\seeds;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 
-class PriorityTableSeeder
+class PriorityTableSeeder extends Seeder
 {
 
 }
