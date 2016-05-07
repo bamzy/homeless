@@ -12,11 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home.blade');
 });
+
+
+
 Route::get('/WalkingRoute',function(){
    $walkingRoute = App\WalkingRoute::all();
+    print_r($walkingRoute);
 });
+Route::get('/Task',function(){
+
+    $task = App\Task::find(1);
+    print_r($task);
+});
+
 //Route::get('/hello/{name}', function ($name) {
 //    echo ('you are in hello '. $name);
 //});
